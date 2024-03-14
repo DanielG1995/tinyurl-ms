@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/urlapp/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/urlapp/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/urlapp",
+  "projects": {
+    "urlapp": {
+      "type": "application",
+      "root": "apps/urlapp",
+      "entryFile": "main",
+      "sourceRoot": "apps/urlapp/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/urlapp/tsconfig.app.json"
+      }
+    },
+    "tinyurlmicroservice": {
+      "type": "application",
+      "root": "apps/tinyurlmicroservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/tinyurlmicroservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tinyurlmicroservice/tsconfig.app.json"
+      }
+    },
+    "ms-dbcrud": {
+      "type": "application",
+      "root": "apps/ms-dbcrud",
+      "entryFile": "main",
+      "sourceRoot": "apps/ms-dbcrud/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ms-dbcrud/tsconfig.app.json"
+      }
+    }
+  }
+}
