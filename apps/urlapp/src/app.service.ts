@@ -8,10 +8,10 @@ export class AppService {
   constructor(@Inject('URL_SERVICE') private url: ClientProxy,
     @Inject('DB_SERVICE') private db: ClientProxy) { }
 
-  async createUrl(url: string) {
+  async createUrl(url: string, host:string) {
 
     const key = await firstValueFrom(this.url.send({ action: 'new_url' }, url))
-    return firstValueFrom(this.db.send({ action: 'save_url' }, { longUrl: url, key, tinyUrl: `${process.env.HOST_URL_BASE}${key}` }))
+    return firstValueFrom(this.db.send({ action: 'save_url' }, { longUrl: url, key, tinyUrl: `${host || process.env.HOST_URL_BASE}${key}` }))
   }
 
   async getUrlByKey(key: string) {

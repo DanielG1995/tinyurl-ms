@@ -8,7 +8,8 @@ async function bootstrap() {
     {
       transport: Transport.TCP,
       options:{
-        port:3002
+        host:'msdbcrud',
+        port:3002,
       }
     },
   );

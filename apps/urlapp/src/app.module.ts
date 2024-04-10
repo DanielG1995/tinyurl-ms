@@ -7,8 +7,8 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ClientsModule.register([
-      { name: 'URL_SERVICE', transport: Transport.TCP, options: { port: 3000 } },
-      { name: 'DB_SERVICE', transport: Transport.TCP, options: { port: 3002 } },
+      { name: 'URL_SERVICE', transport: Transport.TCP, options: { host:'tinyurlmicroservice',port: 3000 } },
+      { name: 'DB_SERVICE', transport: Transport.TCP, options: {host:'msdbcrud', port: 3002 } },
     ]),
     ConfigModule.forRoot()
   ],

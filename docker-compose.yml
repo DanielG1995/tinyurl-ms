@@ -1,0 +1,31 @@
+version: '3'
+services:
+  urlapp:
+    build:
+      context: ./
+      dockerfile: ./apps/urlapp/Dockerfile
+    volumes:
+      - ./dist/apps/urlapp:/usr/src/app/dist
+    ports:
+      - "3001:3001"
+    restart: always
+  tinyurlmicroservice:
+    build:
+      context: ./
+      dockerfile: ./apps/tinyurlmicroservice/Dockerfile
+    volumes:
+      - ./dist/apps/tinyurlmicroservice:/usr/src/app/dist
+    ports:
+      - "3000:3000"
+    restart: always
+  msdbcrud:
+    build:
+      context: ./
+      dockerfile: ./apps/ms-dbcrud/Dockerfile
+    volumes:
+      - ./dist/apps/ms-dbcrud:/usr/src/app/dist
+    env_file:
+      - .env
+    ports:
+      - "3002:3002"
+    restart: always
