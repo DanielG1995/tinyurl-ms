@@ -8,7 +8,7 @@
   "scripts": {
     "build": "nest build url-app && nest build ms-dbcrud && nest build tinyurlmicroservice",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
-    "start": "nest start urlapp && nest start tinyurlmicroserviceurlapp && nest start ms-dbcrud ",
+    "start": "docker-compose -up --build",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/tinyurlmicroservice/main && node dist/apps/urlapp/main && node dist/apps/ms-dbcrud/main",
